@@ -1,0 +1,20 @@
+# Secrets and local configuration
+.env
+.git
+.gitignore
+
+# Python artifacts
+.venv
+__pycache__
+*.py[cod]
+.pytest_cache
+.mypy_cache
+.ruff_cache
+
+# Local runtime state; session data is stored in a Docker volume
+session
+
+# Editor / OS files
+.vscode
+.idea
+.DS_Store
