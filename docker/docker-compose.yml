@@ -1,0 +1,41 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bdaybell-app
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      # Compose's .env value is used when provided; otherwise use the MongoDB service below.
+      MONGO_URI: ${MONGO_URI:-mongodb://mongo:27017/bdaybell}
+      PORT: "3000"
+      TZ: ${TZ:-Asia/Kolkata}
+      SESSION_DIR: /app/session
+    ports:
+      - "${PORT:-3000}:3000"
+    volumes:
+      - bdaybell_session:/app/session
+    depends_on:
+      mongo:
+        condition: service_healthy
+
+  mongo:
+    image: mongo:7
+    container_name: bdaybell-mongo
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: bdaybell
+      TZ: ${TZ:-Asia/Kolkata}
+    volumes:
+      - bdaybell_mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  bdaybell_mongo_data:
+  bdaybell_session:
