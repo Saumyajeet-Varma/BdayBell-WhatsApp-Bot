@@ -8,5 +8,5 @@
 - [x] birthdays
 - [x] commands
 - [x] scheduler
-- [ ] main
+- [x] main
 - [ ] tests
