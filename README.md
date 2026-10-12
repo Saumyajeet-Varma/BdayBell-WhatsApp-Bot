@@ -5,8 +5,8 @@
 - [x] config
 - [x] whatsapp
 - [x] database
-- [ ] birthdays
-- [ ] commands
-- [ ] scheduler
+- [x] birthdays
+- [x] commands
+- [x] scheduler
 - [ ] main
 - [ ] tests
