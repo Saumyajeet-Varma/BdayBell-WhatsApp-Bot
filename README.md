@@ -59,8 +59,8 @@ BdayBell/
 ### 1. Clone the Repository
 
 ```bash
-git clone <YOUR_REPOSITORY_URL>
-cd BdayBell
+git clone https://github.com/Saumyajeet-Varma/BdayBell-WhatsApp-Bot
+cd BdayBell-WhatsApp-Bot
 ```
 
 ### 2. Create a Virtual Environment
@@ -138,7 +138,7 @@ Once the WhatsApp client is connected, the bot supports the following commands.
 
 | Command | Description | Example |
 |---|---|---|
-| `!add [Name] [DD-MM]` | Add a birthday | `!add Aman 19-09` |
+| `!add [Name] [DD-MM]` | Add a birthday | `!add Saumyajeet 10-08` |
 | `!list` | Display saved birthdays | `!list` |
 | `!ping` | Check whether the bot is responsive | `!ping` |
 | `!getid` | Display the current chat ID | `!getid` |
@@ -147,13 +147,13 @@ Once the WhatsApp client is connected, the bot supports the following commands.
 ### Adding a Birthday
 
 ```text
-!add Aman 19-09
+!add Saumyajeet 10-09
 ```
 
 Example response:
 
 ```text
-✅ Added Aman on 19-09
+✅ Added Saumyajeet on 10-08
 ```
 
 ### Listing Birthdays
@@ -167,15 +167,15 @@ Example response:
 ```text
 🎂 Saved Birthdays 🎂
 
-- Aman: 19-09
-- Rahul: 25-12
+- Aman: 10-08
+- Ayush: 11-12
 ```
 
 ### Automated Reminders
 
 BdayBell checks for birthdays occurring the next day and schedules a reminder at **10:00 PM in the configured timezone**.
 
-For example, if someone's birthday is on 19 September, the reminder is scheduled for 18 September at 10:00 PM.
+For example, if someone's birthday is on 10 August, the reminder is scheduled for 09 August at 10:00 PM.
 
 ## 🗄️ Database Structure
 
@@ -185,8 +185,8 @@ Example document:
 
 ```json
 {
-  "name": "Aman",
-  "date": "19-09"
+  "name": "Saumyajeet",
+  "date": "10-08"
 }
 ```
 
